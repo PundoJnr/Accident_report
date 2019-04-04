@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "422183319834",
+    "firebase_url": "https://accident-report-1de96.firebaseio.com",
+    "project_id": "accident-report-1de96",
+    "storage_bucket": "accident-report-1de96.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422183319834:android:db1ec8ef000ef22f",
+        "android_client_info": {
+          "package_name": "com.dhure.accidentreport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422183319834-7gqp7tme2as34sblspo7t78qdbq0vdbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhure.accidentreport",
+            "certificate_hash": "98ff8b8dd084aced79ff4f3df0fdbb3e0ebefd9a"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyDiO6rTIhWtiXcDx425xLjULOR0CrmoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422183319834-o6igge2m10of598e66g0fslt2p73rkcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -7,6 +7,7 @@
     tools:context=".login">
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
@@ -16,6 +17,7 @@
         android:textAlignment="center"/>
 
     <EditText
+        android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
@@ -25,13 +27,14 @@
         android:textAlignment="center"
         android:inputType="textPassword"/>
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="400dp"
         android:layout_marginLeft="135dp"
         android:text="Log me in"
-        android:textSize="25dp"/>
+        android:textSize="25dp"
+        android:onClick="login"/>
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
