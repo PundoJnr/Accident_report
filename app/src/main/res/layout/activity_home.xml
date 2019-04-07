@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home">
+    tools:context=".home"
+    android:background="@drawable/background2">
 
 
     <TextView
@@ -13,25 +14,37 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_marginTop="11dp"
-        android:paddingTop="10dp"
+        android:paddingTop="5dp"
         android:text="TERMS AND CONDITIONS"
+        android:fontFamily="sans-serif"
+        android:textColor="#fff"
+        android:textStyle="bold"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="sans-serif"
+        android:text="Terms and Conditions agreements act as a legal contract between you (the company) who has the website or mobile app and the user who access your website and mobile app.
+
+Having a Terms and Conditions agreement is completely optional. No laws require you to have one. Not even the super-strict and wide-reaching General Data Protection Regulation (GDPR).
+
+It’s up to you to set the rules and guidelines that the user must agree to. You can think of your Terms and Conditions agreement as the legal agreement where you maintain your rights to exclude users from your app in the event that they abuse your app, where you maintain your legal rights against potential app abusers, and so on.
+
+"
         android:textAlignment="center"
-        android:text="fill in terms and conditions" />
+        android:textColor="#fff"
+        android:textSize="18dp" />
 
     <Button
         android:id="@+id/homeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="500dp"
-        android:layout_marginLeft="90dp"
         android:text="ACCEPT TERMS AND CONDITIONS"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClick"/>
 </RelativeLayout>
