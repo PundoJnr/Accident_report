@@ -32,12 +32,16 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.google.firebase:firebase-auth:10.2.1'
     implementation 'com.google.android.gms:play-services-gcm:10.2.1'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:11.0.2'
+
 }
-apply plugin: 'com.android.application'
 
 android {
     // ...
 }
+apply plugin: 'com.android.application'
+
 
 
 apply plugin: 'com.google.gms.google-services'

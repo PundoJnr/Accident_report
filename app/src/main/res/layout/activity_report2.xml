@@ -7,8 +7,70 @@
     tools:context=".report2"
     android:background="@drawable/background2">
 
+    <TextView
+        android:id="@+id/date1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Accident"
+        android:layout_marginTop="19sp"
+        android:layout_marginLeft="25sp"/>
 
-    
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21sp"
+        android:layout_marginLeft="25sp"
+        android:hint="@string/date"/>
+    <TextView
+        android:id="@+id/time1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time of the Accident"
+        android:layout_marginTop="99sp"
+        android:layout_marginLeft="25sp"/>
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="25sp"
+        android:hint="@string/time"/>
+
+    <TextView
+        android:id="@+id/location1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location of Accident"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="25sp"/>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="350dp"
+        android:layout_height="100sp"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="25sp"/>
+
+    <TextView
+        android:id="@+id/location2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location of Accident"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="25sp"/>
+
+    <EditText
+        android:id="@+id/locationText"
+        android:layout_width="350sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="25sp"
+        android:lines="4"
+        />
+
     <Button
         android:id="@+id/finish"
         android:layout_width="wrap_content"
@@ -16,4 +78,7 @@
         android:text="Finish"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="250dp"/>
+
+
+
 </RelativeLayout>
