@@ -3,6 +3,7 @@ package com.dhure.accidentreport;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -32,7 +34,8 @@ public class report2 extends AppCompatActivity {
     private int mYear;
     private int mMonth;
     private int mDay;
-    private EditText datePicked;
+    private EditText datePicked, timePicked;
+    TimePickerDialog timePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,31 @@ public class report2 extends AppCompatActivity {
 
         updateDisplay();
 
+        getTime();
 
+
+    }
+
+    private void getTime() {
+        timePicked.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calendar currentTime = Calendar.getInstance();
+                int hour = currentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = currentTime.get(Calendar.MINUTE);
+
+
+
+                timePickerDialog = new TimePickerDialog(report2.this, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        timePicked.setText(hourOfDay + ":" + minute);
+                    }
+                },hour,minute,true);
+                timePickerDialog.setTitle("Select Time");
+                timePickerDialog.show();
+            }
+        });
     }
 
     private void updateDisplay() {
@@ -94,6 +121,7 @@ public class report2 extends AppCompatActivity {
 
     private void initViews() {
         datePicked = findViewById(R.id.date);
+        timePicked = findViewById(R.id.time);
 
     }
 

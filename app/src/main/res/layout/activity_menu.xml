@@ -15,7 +15,6 @@
         android:layout_marginTop="2dp"
         android:layout_marginLeft="5.6dp"
         android:background="#fff"
-        android:drawableLeft="@drawable/acciden"
         android:onClick="report"
         android:text="REPORT ACCIDENT"
         android:textSize="20sp" />
@@ -27,7 +26,6 @@
         android:layout_marginTop="130sp"
         android:layout_marginLeft="5.6dp"
         android:background="#fff"
-        android:drawableLeft="@drawable/ambulance"
         android:onClick="call"
         android:text="CALL AN AMBULANCE"
         android:textAlignment="center"
@@ -42,7 +40,6 @@
         android:onClick="police"
         android:text="CALL THE POLICE"
         android:background="#fff"
-        android:drawableLeft="@drawable/police"
         android:textAlignment="center"
         android:textSize="20dp" />
 
@@ -52,7 +49,6 @@
         android:layout_marginLeft="5.6dp"
         android:layout_height="120dp"
         android:layout_marginTop="390dp"
-        android:drawableLeft="@drawable/policy"
         android:background="#fff"
         android:onClick="policy"
         android:text="APPLY INSURANCE"
