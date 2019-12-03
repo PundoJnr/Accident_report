@@ -3,6 +3,7 @@ package com.dhure.accidentreport;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,10 +24,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class report extends AppCompatActivity {
 
+    private static final String MY_PREFS_NAME = "My Prefs file";
     RadioButton hurty, hurtn, vehy, vehn, owny, ownn;
     RadioGroup one, two, three;
 
     private String hurt ="";
+    private String vehicle ="";
+    private String own ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +47,7 @@ public class report extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.hYes:
+
                         hurt[0] = "hurt";
                         break;
                     case R.id.hNo:
@@ -51,11 +56,46 @@ public class report extends AppCompatActivity {
             }
         });
 
+        final String[] vehicle = {vehy.getText().toString()};
+
+        two.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.vYes:
+                        vehicle[0] = "driver";
+                        break;
+                    case R.id.vNo:
+                        vehicle[0] = "passenger";
+                }
+            }
+        });
+
+
+        final String[] own = {owny.getText().toString()};
+
+        two.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.oYes:
+                        own[0] = "owner";
+                        break;
+                    case R.id.oNo:
+                        own[0] = "notOwner";
+                }
+            }
+        });
 
         sharedPref();
     }
 
     private void sharedPref() {
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME,MODE_PRIVATE).edit();
+        editor.putString("hurt",hurt);
+        editor.putString("vehicle",vehicle);
+        editor.putString("owner",own);
+        editor.apply();
     }
 
     private void initVIews() {
