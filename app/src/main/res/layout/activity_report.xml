@@ -25,14 +25,14 @@
     android:layout_below="@+id/label" >
 
     <RadioButton
-        android:id="@+id/radio1"
+        android:id="@+id/hYes"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:text="YES" />
 
     <RadioButton
-        android:id="@+id/radio2"
+        android:id="@+id/hNo"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
@@ -55,14 +55,14 @@
         android:layout_below="@+id/label2" >
 
         <RadioButton
-            android:id="@+id/radio3"
+            android:id="@+id/vYes"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="YES" />
 
         <RadioButton
-            android:id="@+id/radio4"
+            android:id="@+id/vNo"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_below="@+id/label3" >
 
         <RadioButton
-            android:id="@+id/radio5"
+            android:id="@+id/oYes"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             android:text="YES" />
 
         <RadioButton
-            android:id="@+id/radio6"
+            android:id="@+id/oNo"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -103,8 +103,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="400sp"
-        android:layout_marginLeft="300dp"
+        android:layout_below="@+id/radio_group3"
+        android:layout_marginTop="20sp"
+        android:layout_alignParentRight="true"
         android:text="Next"
         android:onClick="next"/>
 

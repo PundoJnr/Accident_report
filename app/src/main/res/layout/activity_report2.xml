@@ -41,36 +41,23 @@
         android:hint="@string/time"/>
 
     <TextView
-        android:id="@+id/location1"
+        android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Location of Accident"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="25sp"/>
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="350dp"
-        android:layout_height="100sp"
-        android:layout_marginTop="230dp"
-        android:layout_marginLeft="25sp"/>
-
-    <TextView
-        android:id="@+id/location2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Location of Accident"
-        android:layout_marginTop="350dp"
+        android:text="Location of accident"
+        android:layout_below="@+id/time"
+        android:layout_marginTop="25sp"
         android:layout_marginLeft="25sp"/>
 
     <EditText
-        android:id="@+id/locationText"
-        android:layout_width="350sp"
+        android:id="@+id/location"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="50sp"
+        android:layout_below="@+id/time"
         android:layout_marginLeft="25sp"
-        android:lines="4"
-        />
+        android:hint="Bypass"/>
+
 
     <Button
         android:id="@+id/finish"
