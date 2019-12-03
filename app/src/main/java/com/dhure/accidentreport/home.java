@@ -17,7 +17,7 @@ public class home extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        Button btn = (Button) findViewById(R.id.homeButton);
+        Button btn = findViewById(R.id.homeButton);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

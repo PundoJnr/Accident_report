@@ -23,37 +23,79 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+
+@SuppressWarnings("deprecation")
 public class report2 extends AppCompatActivity {
 
-    EditText date = (EditText) findViewById(R.id.date);
-    private FusedLocationProviderClient fusedLocationClient;
+    static final int DATE_DIALOG_ID = 0;
+    private int mYear;
+    private int mMonth;
+    private int mDay;
+    private EditText datePicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report2);
 
-        setTitle("Accident information");
-        setContentView(R.layout.activity_report2);
+        getSupportActionBar().setTitle("report Accident");
 
-        Button bt = (Button) findViewById(R.id.finish);
-        MapView mapView = (MapView) findViewById(R.id.mapView);
+        initViews();
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-
-        bt.setOnClickListener(new View.OnClickListener() {
+        //show date dialog on click
+        datePicked.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //write and send report
+                showDialog(DATE_DIALOG_ID);
             }
         });
+
+        //get current date
+        final Calendar cal = Calendar.getInstance();
+        mYear = cal.get(Calendar.YEAR);
+        mMonth = cal.get(Calendar.MONTH);
+        mDay = cal.get(Calendar.DAY_OF_MONTH);
+
+        updateDisplay();
+
+
     }
 
+    private void updateDisplay() {
+        this.datePicked.setText(
+                new StringBuilder()
+                        .append(mMonth + 1).append("/")
+                        .append(mDay).append("/")
+                        .append(mYear).append(" ")
 
+        );
+    }
+    //callBack for dialog
+    private DatePickerDialog.OnDateSetListener mDateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            mYear = year;
+            mMonth = month;
+            mDay = dayOfMonth;
 
+            updateDisplay();
+        }
+    };
 
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id){
+            case DATE_DIALOG_ID:
+                return new DatePickerDialog(this, mDateListener, mYear, mMonth, mDay);
+        }
+        return null;
+    }
 
+    private void initViews() {
+        datePicked = findViewById(R.id.date);
 
+    }
 
 
 }

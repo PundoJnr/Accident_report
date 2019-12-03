@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".report"
-    android:background="@drawable/background2">
+    android:background="@drawable/background2"
+    android:padding="15sp">
 
     <TextView
         android:id="@+id/label"
