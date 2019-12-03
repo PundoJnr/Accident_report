@@ -15,12 +15,40 @@
       },
       "oauth_client": [
         {
+          "client_id": "422183319834-0usoj5dcn10no6hgha5t6frpidi3nan7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhure.accidentreport",
+            "certificate_hash": "7383519fe69a958ffe01b9eb84f18c6b8cdf5650"
+          }
+        },
+        {
+          "client_id": "422183319834-qefleve7r57jd4t2v06dqb00jd1fnreb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhure.accidentreport",
+            "certificate_hash": "ccfdd8a1d22567bef849e0d6e938aaa95c4abbd7"
+          }
+        },
+        {
+          "client_id": "422183319834-65e2v3or29tq2vnm6p7jrikaj4sh4ide.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dhure.accidentreport",
+            "certificate_hash": "628537ebd198621bd81c137fb44b2ac2212711e4"
+          }
+        },
+        {
           "client_id": "422183319834-7gqp7tme2as34sblspo7t78qdbq0vdbm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.dhure.accidentreport",
             "certificate_hash": "98ff8b8dd084aced79ff4f3df0fdbb3e0ebefd9a"
           }
+        },
+        {
+          "client_id": "422183319834-o6igge2m10of598e66g0fslt2p73rkcg.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [

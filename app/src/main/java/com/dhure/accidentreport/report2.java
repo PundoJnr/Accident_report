@@ -39,13 +39,23 @@ import static com.dhure.accidentreport.report.MY_PREFS_NAME;
 public class report2 extends AppCompatActivity {
 
     static final int DATE_DIALOG_ID = 0;
+    TimePickerDialog timePickerDialog;
+    Button finish;
     private int mYear;
     private int mMonth;
     private int mDay;
     private EditText datePicked, timePicked, accidentLocation;
-    TimePickerDialog timePickerDialog;
-    Button finish;
+    //callBack for dialog
+    private DatePickerDialog.OnDateSetListener mDateListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            mYear = year;
+            mMonth = month;
+            mDay = dayOfMonth;
 
+            updateDisplay();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,34 +84,32 @@ public class report2 extends AppCompatActivity {
 
         getTime();
 
-        storage();
-    }
-
-    private void storage() {
-        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("reports");
-
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME,MODE_PRIVATE);
-                String hurt = preferences.getString("hurt", null);
-                String vehicle = preferences.getString("vehicle", null);
-                String own = preferences.getString("own", null);
-                String date = datePicked.getText().toString();
-                String time = timePicked.getText().toString();
-                String location = accidentLocation.getText().toString();
-                String key = reference.push().getKey();
-                reports save = new reports(hurt,vehicle,own,date,time,location);
-                reference.child(key).setValue(save);
-
-                Toast.makeText(report2.this, "Report successfully submitted", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(report2.this, menu.class));
-                finish();
-
-
-
+                storage();
             }
         });
+
+    }
+
+    private void storage() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("reports");
+
+        SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String hurt = preferences.getString("hurt", null);
+        String vehicle = preferences.getString("vehicle", null);
+        String own = preferences.getString("own", null);
+        String date = datePicked.getText().toString();
+        String time = timePicked.getText().toString();
+        String location = accidentLocation.getText().toString();
+        String key = reference.push().getKey();
+        reports save = new reports(hurt, vehicle, own, date, time, location);
+        reference.child(key).setValue(save);
+
+        Toast.makeText(report2.this, "Report successfully submitted", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(report2.this, menu.class));
+        finish();
 
 
     }
@@ -115,13 +123,12 @@ public class report2 extends AppCompatActivity {
                 int minute = currentTime.get(Calendar.MINUTE);
 
 
-
                 timePickerDialog = new TimePickerDialog(report2.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                         timePicked.setText(hourOfDay + ":" + minute);
                     }
-                },hour,minute,true);
+                }, hour, minute, true);
                 timePickerDialog.setTitle("Select Time");
                 timePickerDialog.show();
             }
@@ -137,21 +144,10 @@ public class report2 extends AppCompatActivity {
 
         );
     }
-    //callBack for dialog
-    private DatePickerDialog.OnDateSetListener mDateListener = new DatePickerDialog.OnDateSetListener() {
-        @Override
-        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-            mYear = year;
-            mMonth = month;
-            mDay = dayOfMonth;
-
-            updateDisplay();
-        }
-    };
 
     @Override
     protected Dialog onCreateDialog(int id) {
-        switch (id){
+        switch (id) {
             case DATE_DIALOG_ID:
                 return new DatePickerDialog(this, mDateListener, mYear, mMonth, mDay);
         }
