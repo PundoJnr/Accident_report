@@ -24,9 +24,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class report extends AppCompatActivity {
 
-    private static final String MY_PREFS_NAME = "My Prefs file";
+    static final String MY_PREFS_NAME = "My Prefs file";
     RadioButton hurty, hurtn, vehy, vehn, owny, ownn;
     RadioGroup one, two, three;
+    Button finish;
 
     private String hurt ="";
     private String vehicle ="";
