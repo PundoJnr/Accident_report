@@ -29,9 +29,10 @@ public class report extends AppCompatActivity {
     RadioGroup one, two, three;
     Button finish;
 
-    private String hurt ="";
-    private String vehicle ="";
-    private String own ="";
+    String hurt = "";
+    String vehicle = "";
+    String owner = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,49 +42,42 @@ public class report extends AppCompatActivity {
 
         initVIews();
 
-        final String[] hurt = {hurty.getText().toString()};
 
         one.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.hYes:
-
-                        hurt[0] = "hurt";
+                        String hurt = "persons injured";
                         break;
                     case R.id.hNo:
-                        hurt[0] = "notHurt";
+                        hurt = "no casualties";
                 }
             }
         });
-
-        final String[] vehicle = {vehy.getText().toString()};
-
         two.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.vYes:
-                        vehicle[0] = "driver";
+                        String vehicle = "Driving";
                         break;
                     case R.id.vNo:
-                        vehicle[0] = "passenger";
+                        vehicle = "passenger";
                 }
             }
         });
 
 
-        final String[] own = {owny.getText().toString()};
-
         two.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
+                switch (checkedId) {
                     case R.id.oYes:
-                        own[0] = "owner";
+                        String owner = "Owner of the vehicle";
                         break;
                     case R.id.oNo:
-                        own[0] = "notOwner";
+                        owner = "not vehicle owner";
                 }
             }
         });
@@ -92,10 +86,10 @@ public class report extends AppCompatActivity {
     }
 
     private void sharedPref() {
-        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME,MODE_PRIVATE).edit();
-        editor.putString("hurt",hurt);
-        editor.putString("vehicle",vehicle);
-        editor.putString("owner",own);
+        SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+        editor.putString("hurt", hurt);
+        editor.putString("vehicle", vehicle);
+        editor.putString("owner", owner);
         editor.apply();
     }
 
@@ -107,12 +101,12 @@ public class report extends AppCompatActivity {
         owny = findViewById(R.id.oYes);
         ownn = findViewById(R.id.oNo);
         one = findViewById(R.id.radio_group);
-        two =findViewById(R.id.radio_group2);
+        two = findViewById(R.id.radio_group2);
         three = findViewById(R.id.radio_group3);
     }
 
-    public  void next(View view){
-        Intent intent = new Intent(this,report2.class);
+    public void next(View view) {
+        Intent intent = new Intent(this, report2.class);
         startActivity(intent);
     }
 }

@@ -99,7 +99,7 @@ public class report2 extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String hurt = preferences.getString("hurt", null);
         String vehicle = preferences.getString("vehicle", null);
-        String own = preferences.getString("own", null);
+        String own = preferences.getString("owner", null);
         String date = datePicked.getText().toString();
         String time = timePicked.getText().toString();
         String location = accidentLocation.getText().toString();
